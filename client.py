@@ -99,11 +99,8 @@ class Client:
             "type": "username",
             "username": self.username
         })
-
-        # create key pairs
         self.public_key, self.private_key = generate_rsa_keys()
 
-        # exchange public keys
         self.send_json({
             "type": "public_key",
             "e": self.public_key[0],
