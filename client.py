@@ -137,7 +137,6 @@ class Client:
                 encrypted_message = payload["encrypted_message"]
                 incoming_hash = payload["hash"]
 
-                # decrypt message with the secrete key
                 message = xor_decrypt(encrypted_message, self.secret_key)
 
                 if get_hash(message) != incoming_hash:
